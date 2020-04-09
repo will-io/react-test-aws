@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 
-class About extends Component {
-  render(){
+function About () {
+  
   return (
     <div>
       <h1>Welcome to our about page!</h1>
@@ -12,7 +12,6 @@ class About extends Component {
       <p>TBD</p>
     </div>
   )
-  }
 }
 
 export default About;

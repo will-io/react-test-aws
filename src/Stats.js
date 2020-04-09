@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 
-class Stats extends Component {
-  render(){
+function Stats () {
+  
   return (
     <div className="App">
       
@@ -12,7 +12,6 @@ class Stats extends Component {
 
     </div>
   )
-  }
 }
 
 export default Stats;

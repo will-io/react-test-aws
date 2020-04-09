@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
 import Nav from './Nav';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
@@ -7,8 +7,8 @@ import Stats from './Stats'
 import Home from './Home'
 
 
-class App extends Component {
-  render() {
+function App () {
+  
   return (
     <Router>
     <div className="App">
@@ -23,7 +23,7 @@ class App extends Component {
     </div>
     </Router>
   );
-  }
+  
 }
 
 export default App;
