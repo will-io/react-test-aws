@@ -1,6 +1,6 @@
 import React , { useState} from 'react';
 import './App.css';
-
+import Rating from '@material-ui/lab/Rating';
 
 const Home = () => {
 
@@ -15,6 +15,7 @@ const Home = () => {
     const [order,setOrder] =  useState(false);
     const [gluten,setGluten] =  useState(false);
     const [vegan,setVegan] =  useState(false);
+    const [rating, setRating] = useState(2);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -29,6 +30,7 @@ const Home = () => {
         console.log(gluten);
         console.log(vegan);
         console.log(review);
+        console.log(rating);
         console.log("form submitted");
     };
     
@@ -39,56 +41,66 @@ const Home = () => {
             <label>Please enter your name: </label>
             <input type = "text" value = {name} required onChange={(event)=> setName(event.target.value)}></input>
          </div>
+         <br  />
          <div>
             <label>Please enter a location: </label>
             <input type = "text" value = {location} required onChange={(event)=> setLocation(event.target.value)}></input>
          </div>
             <br />
             
+            <div>
+            <label>Give us a rating</label>
+            <br  /> 
+            <Rating name="simple-controlled" precision ={0.5} value ={rating} onChange={(event,newValue) => setRating(newValue)}/>
+            </div>
+            <br />
             <b>Bonus Feature(s):</b> 
             <br  />
-            <table >
+            <table border = '1px solid black' >
+
                 <tr>
-                <th>  </th><th>  </th><th>  </th><th>  </th>
-                <th> wifi </th>
-                <th>  </th><th>  </th><th>  </th><th>  </th>
-                <th>  Outlets </th>
-                <th>  </th><th>  </th><th>  </th><th>  </th>
-                <th>  Kid Friendly</th>
-                <th>  </th><th>  </th><th>  </th><th>  </th>
+                <th> Wi-fi </th>
+                <th> Outlets </th>
+                <th> Kid Friendly</th>
                 <th> Reward Program  </th>
-                <th>  </th><th>  </th><th>  </th><th>  </th>
                 <th> Sofa(s) </th>
-                <th>  </th><th>  </th><th>  </th><th>  </th>
                 <th> Order Ahead </th>
-                <th>  </th><th>  </th><th>  </th><th>  </th>
-                <th> Gluten-free options </th>
-                <th>  </th><th>  </th><th>  </th><th>  </th>
-                <th> Vegan options </th>
+                <th> Gluten-free Options </th>
+                <th> Vegan Options </th>
                 </tr>
+
                 <tr>
-                <th>  </th><th>  </th><th>  </th><th>  </th>
+                <td  >
                 <input type="checkbox" value = {wifi}  onChange={(event) => setWifi( prevState => !prevState)}/>
-                <th>  </th><th>  </th><th>  </th><th>  </th>
+                </td>
+                <td >
                 <input type="checkbox" value = {outlets}  onChange={(event) => setOutlets( prevState => !prevState)}/>
-                <th>  </th><th>  </th><th>  </th><th>  </th>
+                </td>
+                <td >
                 <input type="checkbox" value = {kids}  onChange={(event) => setKids( prevState => !prevState)}/>
-                <th>  </th><th>  </th><th>  </th><th>  </th>
+                </td>
+                <td >
                 <input type="checkbox" value = {reward}  onChange={(event) => setRewards( prevState => !prevState)}/>
-                <th>  </th><th>  </th><th>  </th><th>  </th>
+                </td>
+                <td >
                 <input type="checkbox" value = {sofas}  onChange={(event) => setSofas( prevState => !prevState)}/>
-                <th>  </th><th>  </th><th>  </th><th>  </th>
+                </td>
+                <td >
                 <input type="checkbox" value = {order}  onChange={(event) => setOrder( prevState => !prevState)}/>
-                <th>  </th><th>  </th><th>  </th><th>  </th>
+                </td>
+                <td >
                 <input type="checkbox" value = {gluten}  onChange={(event) => setGluten( prevState => !prevState)}/>
-                <th>  </th><th>  </th><th>  </th><th>  </th>
+                </td>
+                <td >
                 <input type="checkbox" value = {vegan}  onChange={(event) => setVegan( prevState => !prevState)}/>
+                </td>
                 </tr>
+
             </table>
-        
+    
             <br />
          <div>
-            <textarea rows="5" cols="50"  type="text" placeholder="Please enter your review here." value = {review} onChange={(event) => setReview(event.target.value)}></textarea>
+            <textarea rows="5" cols="50"  type="text" placeholder="Please enter your review/feedback here." value = {review} onChange={(event) => setReview(event.target.value)}></textarea>
          </div>
         <input  type="submit" value= "submit review" />
         </form>
