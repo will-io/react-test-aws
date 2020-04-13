@@ -18,7 +18,7 @@ const Home = () => {
     const [rating, setRating] = useState(2);
 
     const handleSubmit = event => {
-        event.preventDefault();
+       event.preventDefault();
         console.log(name);
         console.log(location);
         console.log(wifi);
@@ -36,7 +36,7 @@ const Home = () => {
     
     return(
         <form onSubmit = {handleSubmit} >
-            <h3>select a Coffe or Tea shop around campus and give it a rating</h3>
+            <h3>Select a Coffe or Tea shop around campus and give it a rating</h3>
          <div>
             <label>Please enter your name: </label>
             <input type = "text" value = {name} required onChange={(event)=> setName(event.target.value)}></input>
@@ -56,19 +56,18 @@ const Home = () => {
             <br />
             <b>Bonus Feature(s):</b> 
             <br  />
-            <table border = '1px solid black' >
 
+            <table border = '1px solid black' align = 'center'>
+            <thead>
                 <tr>
                 <th> Wi-fi </th>
                 <th> Outlets </th>
                 <th> Kid Friendly</th>
                 <th> Reward Program  </th>
-                <th> Sofa(s) </th>
-                <th> Order Ahead </th>
-                <th> Gluten-free Options </th>
-                <th> Vegan Options </th>
                 </tr>
+                </thead>
 
+                <tbody>
                 <tr>
                 <td  >
                 <input type="checkbox" value = {wifi}  onChange={(event) => setWifi( prevState => !prevState)}/>
@@ -82,6 +81,20 @@ const Home = () => {
                 <td >
                 <input type="checkbox" value = {reward}  onChange={(event) => setRewards( prevState => !prevState)}/>
                 </td>
+                </tr>
+                </tbody>
+
+                <thead>
+                <tr>
+                <th> Sofa(s) </th>
+                <th> Order Ahead </th>
+                <th> Gluten-free Options </th>
+                <th> Vegan Options </th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
                 <td >
                 <input type="checkbox" value = {sofas}  onChange={(event) => setSofas( prevState => !prevState)}/>
                 </td>
@@ -95,7 +108,7 @@ const Home = () => {
                 <input type="checkbox" value = {vegan}  onChange={(event) => setVegan( prevState => !prevState)}/>
                 </td>
                 </tr>
-
+                </tbody>
             </table>
     
             <br />

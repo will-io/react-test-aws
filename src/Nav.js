@@ -15,7 +15,7 @@ class Nav extends Component {
     return(
         <nav>
             <h3>
-            <img heigh ="60" width = "80" src={coffe} alt="coffe" />   
+            <img heigh ="100" width = "120" src={coffe} alt="coffe" />   
             <img src={logo} className="App-logo" alt="logo" />
             GMU Cafe Review
             </h3>

@@ -9,7 +9,8 @@ function About () {
       <br>
       </br>
       <h1>collaboration summary:</h1>
-      <p>TBD</p>
+      <p>Willy worked on: TBD</p>
+      <p>Kim worked on: TBD</p>
     </div>
   )
 }
