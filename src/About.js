@@ -9,8 +9,9 @@ function About () {
       <br>
       </br>
       <h1>collaboration summary:</h1>
-      <p>Willy worked on: TBD</p>
-      <p>Kim worked on: TBD</p>
+      <p>Willy worked on: developing hooks and state menegement</p>
+      <p>Kim worked on: reformatting the review input fields</p>
+      <p>Both did some code review</p>
     </div>
   )
 }
