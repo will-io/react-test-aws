@@ -15,9 +15,9 @@ function App () {
       <Nav/>
       <header className="App-header">
         <Switch>
-        <Route path="/" exact component = {Home}/>
        <Route path="/about" component = {About}/>
        <Route path="/stats" component = {Stats}/>
+       <Route path="/" component = {Home}/>
        </Switch>
       </header>
     </div>
