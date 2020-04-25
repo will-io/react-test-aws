@@ -20,7 +20,7 @@ class Nav extends Component {
             GMU Cafe Review
             </h3>
             <ul className = "nav-links">
-                <Link style = {NavStyle} to="/home">
+                <Link style = {NavStyle} to="/">
                 <li>Home</li>
                 </Link>
                 <Link style = {NavStyle} to="/about">
