@@ -1,7 +1,29 @@
 import React , { useState} from 'react';
 import './App.css';
 import Rating from '@material-ui/lab/Rating';
+import * as firebase from 'firebase';
+import 'firebase/firestore';
+/*
+function useReviews(){
+   const [reviews,setReviews] = useState([])
 
+   useEffect(()=>{
+      const unsubscribe = firebase
+      .firestore()
+      .collection('reviews')
+      .onSnapshot((snapshot)=>{
+         const newReviews = snapshot.docs.map((doc)=>({
+            id:doc.id,
+            ...doc.data()
+         }))
+
+         setReviews(newReviews)
+      })
+      return () => unsubscribe()
+   },[])
+   return reviews
+}
+*/
 const Home = () => {
 
     const [name, setName] = useState('');
@@ -17,9 +39,41 @@ const Home = () => {
     const [vegan,setVegan] =  useState(false);
     const [rating, setRating] = useState(2);
 
-    const handleSubmit = event => {
+    function handleSubmit  (event) {
        event.preventDefault();
-        console.log(name);
+
+       firebase
+         .firestore()
+         .collection('reviews')
+         .add({
+            name,
+            location,
+            review,
+            wifi,
+            outlets,
+            reward,
+            kids,
+            sofas,
+            order,
+            gluten,
+            vegan,
+            star_rating:parseInt(rating)
+         })
+         .then(()=>{
+            setName('')
+            setLocation('')
+            setReview('')
+            setWifi('')
+            setGluten('')
+            setOutlets('')
+            setOrder('')
+            setRewards('')
+            setKids('')
+            setSofas('')
+            setVegan('')
+            setRating('')
+         })
+       /*console.log(name);
         console.log(location);
         console.log(wifi);
         console.log(outlets);
@@ -31,9 +85,25 @@ const Home = () => {
         console.log(vegan);
         console.log(review);
         console.log(rating);
-        console.log("form submitted");
-    };
-    
+        console.log("form submitted");*/
+       };
+
+   /* 
+    useEffect((event)=>{
+       window.localStorage.setItem('name',name)
+       window.localStorage.setItem('location',location)
+       window.localStorage.setItem('review',review)
+       window.localStorage.setItem('wifi',wifi)
+       window.localStorage.setItem('outlets',outlets)
+       window.localStorage.setItem('kids',kids)
+       window.localStorage.setItem('rewards',reward)
+       window.localStorage.setItem('sofas',sofas)
+       window.localStorage.setItem('order',order)
+       window.localStorage.setItem('gluten',gluten)
+       window.localStorage.setItem('vegan',vegan)
+       window.localStorage.setItem('rating',rating)
+    },[])
+    */
     return(
         <form onSubmit = {handleSubmit} >
             <h3>Select a Coffe or Tea shop around campus and give it a rating</h3>

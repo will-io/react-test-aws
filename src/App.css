@@ -10,6 +10,12 @@ nav {
   color: white;
   
 }
+.review-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
 .nav-links{
   width: 50%;
   display: flex;
