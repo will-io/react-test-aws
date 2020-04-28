@@ -25,7 +25,6 @@ function useReviews(){
 
 const Stats = () => {
 
-// const ReviewList = () =>{
       const reviews = useReviews()
 
   return (
@@ -45,7 +44,7 @@ const Stats = () => {
     <div >
     <ol>
       {reviews.map((name)=>
-      // <div className = "review-entry">
+
       <li key= {name.id}>
        
         <p> Reviewer: {name.name} </p>
@@ -58,21 +57,20 @@ const Stats = () => {
             </thead>
             <tbody>
                 <tr> 
-          {name.wifi? <p>Wifi &#10004;</p> : <p></p> }
-          {name.outlets? <p>Outlets &#10004;</p> : <p></p> }
-          {name.kid? <p>Kid Friendly &#10004;</p> : <p></p> }
-          {name.reward? <p>Reward Program &#10004;</p> : <p></p> }
-          {name.sofas? <p>Sofa(s) &#10004;</p> : <p></p> }
-          {name.order? <p> Order ahead &#10004;</p> : <p></p> }
-          {name.gluten? <p>Guten-Free Options&#10004;</p> : <p></p> }
-          {name.vegan? <p>Vegan Options &#10004;</p> : <p></p> }
+          {name.wifi? <td>Wifi &#10004;</td> : <td></td> }
+          {name.outlets? <td>Outlets &#10004;</td> : <td></td> }
+          {name.kid? <td>Kid Friendly &#10004;</td> : <td></td> }
+          {name.reward? <td>Reward Program &#10004;</td> : <td></td> }
+          {name.sofas? <td>Sofa(s) &#10004;</td> : <td></td> }
+          {name.order? <td> Order ahead &#10004;</td> : <td></td> }
+          {name.gluten? <td>Guten-Free Options&#10004;</td> : <td></td> }
+          {name.vegan? <td>Vegan Options &#10004;</td> : <td></td> }
               </tr>
               </tbody>
           </table>
        <p> Review: {name.review} </p>
         
       </li>
-      //</div>
       )} 
     </ol>
     </div>

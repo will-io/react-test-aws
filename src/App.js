@@ -5,9 +5,6 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import About from './About'
 import Stats from './Stats'
 import Home from './Home'
-//import ApolloClient from 'apollo-boost'
-//import firebase from 'firebase';
-//import 'firebase/firestore';
 
 function App () {
   
