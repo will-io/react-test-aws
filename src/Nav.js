@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
+import books from './assets/books.jpeg';
 import './App.css';
 import {Link} from 'react-router-dom'
 import coffe from './assets/coffee.jpg';
@@ -16,9 +16,9 @@ class Nav extends Component {
         <nav>
             <h3>
             <img heigh ="100" width = "120" src={coffe} alt="coffe" />   
-            <img src={logo} className="App-logo" alt="logo" />
-            GMU Cafe Review
+            <img heigh ="120" width = "120" src={books} alt="books" /> 
             </h3>
+            <h3> GMU's Favorite Study Spots </h3>
             <ul className = "nav-links">
                 <Link style = {NavStyle} to="/">
                 <li>Home</li>

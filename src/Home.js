@@ -58,20 +58,20 @@ const Home = () => {
 
     return(
         <form onSubmit = {handleSubmit} >
-            <h3>Select a Coffe or Tea shop around campus and give it a rating</h3>
+            <h3>select your favorite spot to study on campus and give it a rating</h3>
          <div>
             <label>Please enter your name: </label>
             <input type = "text" value = {name} required onChange={(event)=> setName(event.target.value)}></input>
          </div>
          <br  />
          <div>
-            <label>Please enter a location: </label>
+            <label>Please enter the location: </label>
             <input type = "text" value = {location} required onChange={(event)=> setLocation(event.target.value)}></input>
          </div>
             <br />
             
             <div>
-            <label>Give us a rating</label>
+            <label>Give it a rating</label>
             <br  /> 
             <Rating name="simple-controlled" precision ={0.5} value ={rating} onChange={(event,newValue) => setRating(newValue)}/>
             </div>
